@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS wordpressdb;
+GRANT ALL PRIVILEGES ON wordpressdb.* TO 

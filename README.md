@@ -15,7 +15,8 @@ Docker build image
 ## Resources
  * https://www.youtube.com/watch?v=svlcIIp-S9w
  * https://www.youtube.com/watch?v=8rC_FsQX7xo
- * https://github.com/andrewnikiforov/ft_inception example of alpine version for this project
+ * [Example of alpine version for this project](https://github.com/andrewnikiforov/ft_inception)
  * https://docs.docker.com/storage/volumes/
  * https://www.youtube.com/watch?v=MVIcrmeV_6c
  * https://www.youtube.com/watch?v=3c-iBn73dDE&list=PLy7NrYWoggjxtN4YbSMYFFdpaxb-fR4zC
+ * [How to use .env file](https://www.youtube.com/watch?v=WqiazgeOsiQ)

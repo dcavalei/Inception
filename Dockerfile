@@ -1,10 +1,6 @@
-FROM alpine:3.15.0
+FROM debian:buster
 
-VOLUME ["/sys/fs/cgroup"]
-
-# update
-RUN apk update && apk upgrade
-
-RUN apk add openrc mariadb mariadb-common mariadb-client
+RUN apt update && apt upgrade \
+	apt install -y mariadb-server systemd
 
 CMD /bin/sh
