@@ -1,10 +1,18 @@
 version: '3'
+
 services:
   mariadb:
-    image: mymariadb:1.0
+    build:
+      context: ./mariadb/
     environment:
-      - MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}"
-      - MYSQL_USER="${MYSQL_USER}"
-      - MYSQL_PASSWORD="${MYSQL_PASSWORD}"
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_USER
+      - MYSQL_PASSWORD
     ports:
       - "3306:3306"
+
+volumes:
+  
+
+networks:
+  honeycomb:

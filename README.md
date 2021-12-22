@@ -20,3 +20,7 @@ Docker build image
  * https://www.youtube.com/watch?v=MVIcrmeV_6c
  * https://www.youtube.com/watch?v=3c-iBn73dDE&list=PLy7NrYWoggjxtN4YbSMYFFdpaxb-fR4zC
  * [How to use .env file](https://www.youtube.com/watch?v=WqiazgeOsiQ)
+ * [Guide](https://epicarts-tistory-com.translate.goog/159?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=pt-PT)
+ * [example](https://github.com/abello-r/ft_inception/tree/master/srcs)
+ * [currently watching](https://www.youtube.com/watch?v=wDVYaaNy2k8)
+ I NEED TO LEARN A LOT, HALP PLS!
