@@ -15,5 +15,19 @@ if [ "$(uname)" == "Linux" ]; then
 		fi
 
 	done
+
+	while true ; do
+
+		read -p "Install docker-compose? [y/n] " input
+		if [ $input == "y" ]; then
+			sudo apt-get install -y docker-compose
+			break;
+		elif [ $input == "n" ]; then
+			break;
+		else
+			echo "Bad input!"
+		fi
+
+	done
 #elif [ "$(uname)" == "Darwin" ]; then
 fi

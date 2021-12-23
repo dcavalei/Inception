@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  mariadb:
+    build: ./mariadb/
+    volumes:
+      - ./mariadb/data:/var/lib/mysql
+    networks:
+      - inception
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+
+networks:
+  inception:
