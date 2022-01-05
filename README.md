@@ -23,4 +23,5 @@ Docker build image
  * [Guide](https://epicarts-tistory-com.translate.goog/159?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=pt-PT)
  * [example](https://github.com/abello-r/ft_inception/tree/master/srcs)
  * [currently watching](https://www.youtube.com/watch?v=wDVYaaNy2k8)
+ * [The Compose Specification](https://github.com/compose-spec/compose-spec/blob/master/spec.md#command)
  I NEED TO LEARN A LOT, HALP PLS!

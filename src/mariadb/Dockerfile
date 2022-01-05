@@ -1,13 +1,17 @@
 FROM debian:buster
 
-COPY conf /
+COPY conf /conf/
 
 RUN apt update && apt upgrade && \
 	apt install -y mariadb-server
 
-RUN sed s/'${MYSQL_WP_NAME}'/"${MYSQL_WP_NAME}"/ /conf/db_setup.sql && \
-sed s/'${MYSQL_ROOT_PASSWORD}'/"${MYSQL_ROOT_PASSWORD}"/ /conf/db_setup.sql && \
-sed s/'${MYSQL_USER}'/"${MYSQL_USER}"/ /conf/db_setup.sql && \
-sed s/'${MYSQL_PASSWORD}'/"${MYSQL_PASSWORD}"/ /conf/db_setup.sql
+EXPOSE 3306
 
-CMD /bin/sh
+ARG MYSQL_WP_NAME
+ARG MYSQL_ROOT_PASSWORD
+ARG MYSQL_USER
+ARG MYSQL_PASSWORD
+
+RUN sh conf/setup.sh
+
+CMD ["mysqld_safe"]

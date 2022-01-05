@@ -3,17 +3,25 @@ version: '3'
 services:
 
   mariadb:
-    build: ./mariadb/
+    container_name: mariadb
+    build:
+      context: ./mariadb
+      args:
+       - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+       - MYSQL_USER=$MYSQL_USER
+       - MYSQL_PASSWORD=$MYSQL_PASSWORD
+       - MYSQL_WP_NAME=$MYSQL_WP_NAME
     volumes:
-      - ./mariadb/data:/var/lib/mysql
+      - mariadb_vol:/var/lib/mysql
     networks:
       - inception
     ports:
       - "3306:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    restart: always
 
 networks:
   inception:
+
+volumes:
+  mariadb_vol:
+    driver: local
