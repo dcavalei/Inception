@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+
+  mariadb:
+    image: my_mariadb:1.0
+    init: true
+    container_name: mariadb_container
+    build:
+      context: ./mariadb
+    environment:
+       - MYSQL_ROOT_PASSWORD
+       - MYSQL_USER
+       - MYSQL_PASSWORD
+       - MYSQL_WP_NAME
+    volumes:
+      - mariadb:/var/lib/mysql
+    networks:
+      - inception
+    ports:
+      - "3306:3306"
+    restart: always
+
+networks:
+  inception:
+
+volumes:
+  mariadb:
+    name: mariadb_volume
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: /home/$USER/data/mariadb

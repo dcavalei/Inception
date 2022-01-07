@@ -13,6 +13,7 @@ Docker build image
 	docker build -t <image_name>:<tag> <dockerfile_path>
 ---
 ## Resources
+ * [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
  * https://www.youtube.com/watch?v=svlcIIp-S9w
  * https://www.youtube.com/watch?v=8rC_FsQX7xo
  * [Example of alpine version for this project](https://github.com/andrewnikiforov/ft_inception)
@@ -24,4 +25,5 @@ Docker build image
  * [example](https://github.com/abello-r/ft_inception/tree/master/srcs)
  * [currently watching](https://www.youtube.com/watch?v=wDVYaaNy2k8)
  * [The Compose Specification](https://github.com/compose-spec/compose-spec/blob/master/spec.md#command)
- I NEED TO LEARN A LOT, HALP PLS!
+
+[Murphy's law](https://en.wikipedia.org/wiki/Murphy%27s_law)
