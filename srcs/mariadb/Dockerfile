@@ -9,7 +9,5 @@ EXPOSE 3306
 
 # make sure that 'docker-entrypoint.sh' is executable aka: chmod +x docker-entrypoint.sh
 COPY docker-entrypoint.sh /usr/local/bin/
-ENTRYPOINT ["docker-entrypoint.sh"]
 
-
-CMD ["mysqld_safe"]
+CMD docker-entrypoint.sh

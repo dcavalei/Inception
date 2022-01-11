@@ -28,3 +28,5 @@ EOF
 
 service mysql stop
 fi
+
+mysqld_safe
