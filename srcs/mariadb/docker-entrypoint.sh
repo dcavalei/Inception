@@ -3,6 +3,9 @@
 sed -ie 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 sed -ie 's/#port/port/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 
+openssl req -x509 -nodes -days 365 -subj "/C=PT/ST=Portugal/L=Lisbon/O=42lisbon/CN=dcavalei" \
+    -newkey rsa:2048 -keyout /etc/ssl/nginx-selfsigned.key -out /etc/ssl/nginx-selfsigned.crt;
+
 env > /var/lib/mysql/tmp.txt
 
 if [ ! -d /var/lib/mysql/$MYSQL_WP_NAME ]

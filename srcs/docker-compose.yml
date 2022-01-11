@@ -9,10 +9,10 @@ services:
     build:
       context: ./mariadb
     environment:
-       - MYSQL_ROOT_PASSWORD
-       - MYSQL_USER
-       - MYSQL_PASSWORD
-       - MYSQL_WP_NAME
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+      - MYSQL_WP_NAME
     volumes:
       - mariadb:/var/lib/mysql
     networks:
@@ -21,10 +21,28 @@ services:
       - "3306:3306"
     restart: always
 
+  nginx:
+    image: my_nginx:1.0
+    init: true
+    container_name: nginx_container
+    build:
+      context: ./nginx
+    environment:
+      - DOMAIN_NAME
+    volumes:
+      - wordpress:/var/www/wordpress
+    networks:
+      - inception
+    ports:
+      - 443:443
+    restart: always
+
 networks:
+
   inception:
 
 volumes:
+
   mariadb:
     name: mariadb_volume
     driver: local
@@ -32,3 +50,11 @@ volumes:
       type: 'none'
       o: 'bind'
       device: /home/$USER/data/mariadb
+
+  wordpress:
+    name: wordpress_volume
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/$USER/data/wordpress

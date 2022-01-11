@@ -5,3 +5,6 @@ RUN apt-get update && apt-get install -y \
 	opensll \
 	&& rm -rf /var/lib/apt/lists/*
 
+COPY wordpress.conf /etc/nginx/sites-available/wordpress.conf
+
+CMD tail -f
