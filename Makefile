@@ -4,6 +4,11 @@ all:	bind_mount
 clean:
 	@docker-compose -f ./srcs/docker-compose.yml --env-file ./srcs/.env down
 
+fclean: clean
+	@sudo rm -rf /home/$(USER)/data/mariadb
+	@sudo rm -rf /home/$(USER)/data/wordpress
+	@docker system prune -a
+
 bind_mount:
 	@mkdir -pv /home/$(USER)/data/mariadb
 	@mkdir -pv /home/$(USER)/data/wordpress

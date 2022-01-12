@@ -2,9 +2,13 @@ FROM debian:buster
 
 RUN apt-get update && apt-get install -y \
 	nginx \
-	opensll \
+	openssl \
 	&& rm -rf /var/lib/apt/lists/*
 
-COPY wordpress.conf /etc/nginx/sites-available/wordpress.conf
+COPY tools/wordpress.conf /etc/nginx/sites-available/
+COPY tools/docker-entrypoint.sh /usr/local/bin/
 
-CMD tail -f
+# make sure that 'docker-entrypoint.sh' is executable aka: chmod +x docker-entrypoint.sh
+ENTRYPOINT [ "docker-entrypoint.sh" ]
+
+CMD [ "nginx" ]

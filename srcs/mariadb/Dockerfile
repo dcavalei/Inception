@@ -5,9 +5,9 @@ RUN apt-get update && apt-get install -y \
 	mariadb-server \
 	&& rm -rf /var/lib/apt/lists/*
 
-EXPOSE 3306
-
-# make sure that '  is executable aka: chmod +x docker-entrypoint.sh
+# make sure that 'docker-entrypoint.sh' is executable aka: chmod +x docker-entrypoint.sh
 COPY docker-entrypoint.sh /usr/local/bin/
 
-CMD docker-entrypoint.sh
+ENTRYPOINT [ "docker-entrypoint.sh" ]
+
+CMD [ "mysqld_safe" ]

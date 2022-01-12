@@ -5,7 +5,6 @@ services:
   mariadb:
     image: my_mariadb:1.0
     init: true
-    container_name: mariadb_container
     build:
       context: ./mariadb
     environment:
@@ -24,17 +23,31 @@ services:
   nginx:
     image: my_nginx:1.0
     init: true
-    container_name: nginx_container
     build:
       context: ./nginx
     environment:
       - DOMAIN_NAME
     volumes:
       - wordpress:/var/www/wordpress
+    depends_on:
+      - wordpress
     networks:
       - inception
     ports:
       - 443:443
+    restart: always
+
+  wordpress:
+    image: my_wordpress:1.0
+    init: true
+    build:
+      context: ./wordpress
+    depends_on:
+      - mariadb
+    networks:
+      - inception
+    volumes:
+      - wordpress:/var/www/wordpress
     restart: always
 
 networks:
