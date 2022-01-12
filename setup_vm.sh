@@ -2,7 +2,8 @@
 
 if [ "$(uname)" == "Linux" ]; then
 
-	while true ; do
+	while true
+	do
 
 		read -p "Install docker? [y/n] " input
 		if [ $input == "y" ]; then
@@ -16,7 +17,8 @@ if [ "$(uname)" == "Linux" ]; then
 
 	done
 
-	while true ; do
+	while true
+	do
 
 		read -p "Install docker-compose? [y/n] " input
 		if [ $input == "y" ]; then
@@ -30,5 +32,25 @@ if [ "$(uname)" == "Linux" ]; then
 		fi
 
 	done
-#elif [ "$(uname)" == "Darwin" ]; then
+
+	while true
+	do
+
+		read -p "Setup DOMAIN_NAME? [y/n] " input
+		if [ $input == "y" ]; then
+		DOMAIN_NAME="$(cat ./srcs/.env | grep DOMAIN_NAME | sed s/DOMAIN_NAME=//g)"
+		( cat /etc/hosts | grep -q $DOMAIN_NAME ) || ( echo "" && cat >> /etc/hosts << EOF
+# Inception domain name
+127.0.0.1 $DOMAIN_NAME
+EOF
+)
+			break;
+		elif [ $input == "n" ]; then
+			break;
+		else
+			echo "Bad input!"
+		fi
+
+	done
+
 fi

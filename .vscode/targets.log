@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jan 12 15:27:44 2022
+# Make data base, printed on Wed Jan 12 17:02:39 2022
 
 # Variables
 
@@ -65,7 +65,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 QT_SCALE_FACTOR = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f0a6397e-931e-422a-ac4d-e3a3ccef39bd.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b9cf88d3-9ffa-4561-a426-1f7cb93d7a6f.sock
 # environment
 VSCODE_CWD = /home/dcavalei/Desktop/Inception
 # environment
@@ -81,7 +81,7 @@ SESSION_MANAGER = local/mx:@/tmp/.ICE-unix/7482,unix/mx:/tmp/.ICE-unix/7482
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-WINDOWID = 130023427
+WINDOWID = 130027368
 # environment
 XDG_MENU_PREFIX = xfce-
 # environment
@@ -165,7 +165,7 @@ LESS = -R
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /home/dcavalei/Desktop
+OLDPWD = /home/dcavalei
 # default
 .VARIABLES := 
 # automatic
@@ -219,7 +219,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 18129
+VSCODE_PID = 6118
 # variable set hash-table stats:
 # Load=105/1024=10%, Rehash=0, Collisions=11/135=8%
 
@@ -276,10 +276,10 @@ all: bind_mount
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
+ 
 # Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 #  recipe to execute (from 'Makefile', line 2):
 	@docker-compose -f ./srcs/docker-compose.yml --env-file ./srcs/.env up -d
- 
 
 .PHONY: all fclean clean bind_mount
 #  Implicit rule search has not been done.
@@ -295,7 +295,7 @@ all: bind_mount
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-12 11:29:34.975091401
+#  Last modified 2022-01-12 16:10:45.223664403
 #  File has been updated.
 #  Successfully updated.
 
@@ -337,6 +337,6 @@ clean:
 # strcache performance: lookups = 39 / hit rate = 43%
 # hash-table stats:
 # Load=22/8192=0%, Rehash=0, Collisions=1/39=3%
-# Finished Make data base on Wed Jan 12 15:27:44 2022
+# Finished Make data base on Wed Jan 12 17:02:39 2022
 
  
