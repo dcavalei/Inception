@@ -1,11 +1,11 @@
 #!/bin/bash
 
-sed -ie 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
+sed -ie 's/bind-address/#bind-address/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 sed -ie 's/#port/port/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 
 if [ ! -d /var/lib/mysql/$MYSQL_WP_NAME ]
 then
-/etc/init.d/mysql start
+service mysql start
 
 # https://bertvv.github.io/notes-to-self/2015/11/16/automating-mysql_secure_installation/
 mysql --user=root <<EOF
@@ -24,7 +24,7 @@ GRANT ALL PRIVILEGES ON $MYSQL_WP_NAME.* TO '$MYSQL_USER'@'%' IDENTIFIED BY '$MY
 FLUSH PRIVILEGES;
 EOF
 
-/etc/init.d/mysql stop
+service mysql stop
 fi
 
 exec "$@"

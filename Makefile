@@ -9,6 +9,8 @@ fclean: clean
 	@sudo rm -rf /home/$(USER)/data/wordpress
 	@docker system prune -a
 
+re: fclean all
+
 bind_mount:
 	@mkdir -pv /home/$(USER)/data/mariadb
 	@mkdir -pv /home/$(USER)/data/wordpress

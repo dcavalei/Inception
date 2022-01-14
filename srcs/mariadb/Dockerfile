@@ -1,6 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Dockerfile                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dcavalei <dcavalei@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/01/13 14:01:03 by dcavalei          #+#    #+#              #
+#    Updated: 2022/01/14 00:15:45 by dcavalei         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 FROM debian:buster
 
-# Update the list of available packages and their versions, but don't install or upgrade any packages besides mariadb-server
 RUN apt-get update && apt-get install -y \
 	mariadb-server \
 	&& rm -rf /var/lib/apt/lists/*
