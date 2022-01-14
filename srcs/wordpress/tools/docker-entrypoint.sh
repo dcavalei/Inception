@@ -2,9 +2,6 @@
 
 if [ ! -f /var/www/html/wp-config.php ]
 then
-	wget https://wordpress.org/wordpress-5.8.3.tar.gz
-	tar -xvzf wordpress-5.8.3.tar.gz
-	rm -rf wordpress-5.8.3.tar.gz
 	mv /wordpress/* /var/www/html/
 	mv /wp-config.php /var/www/html/
 	sed -ie s/'$MYSQL_WP_NAME'/$MYSQL_WP_NAME/g var/www/html/wp-config.php
