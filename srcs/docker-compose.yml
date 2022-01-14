@@ -27,7 +27,6 @@ services:
     init: true
     environment:
       - DOMAIN_NAME
-
     depends_on:
       - wordpress
     networks:
